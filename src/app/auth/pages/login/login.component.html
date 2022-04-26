@@ -1,0 +1,15 @@
+<form class="form"
+      autocomplete="off"
+      [formGroup]="miFormulario"
+      (ngSubmit)="login()">
+
+    <div class="form__container">
+        <h2 class="form__title">Login</h2>
+        <div>
+            <input type="text" formControlName="password" class="form__input" placeholder="Password...">
+        </div>
+        <input type="email" formControlName="email" class="form__input" placeholder="Email...">
+        <input type="submit" value="Enviar" class="form__cta" (click)="send()">
+    
+    </div>
+</form>
