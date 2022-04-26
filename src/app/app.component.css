@@ -1,0 +1,17 @@
+.personal{
+    background-color: rgb(55, 202, 36);
+    color: white;
+    font-size: 1rem;
+    padding: 7px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 7px;
+}
+
+
+.button-container{
+padding-top: 3rem;
+display: flex;
+justify-content: space-around;
+width: 100%;
+}
