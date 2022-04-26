@@ -18,3 +18,64 @@
 </header>
 
 
+<div class="form-body">
+
+    <form class="formulario"
+          [formGroup]="editarForm"
+          (ngSubmit)="onSubmit()"
+          autocomplete="off">
+          
+           <div class="mb-2">
+                <label class="form-label">Nombre</label>
+                <input formControlName="nombre" type="text" class="form-control">
+                    <span class="form-text text-danger"
+                        *ngIf="campoNoEsValido('nombre')">
+                        Este campo debe ser obligatorio 
+                    </span>
+            </div>
+            <div class="mb-2">
+                    <label class="form-label">Empresa</label>
+                    <input formControlName="empresa" type="text" class="form-control">
+                    <span class="form-text text-danger"
+                        *ngIf="campoNoEsValido('empresa')">
+                        Este campo debe ser obligatorio 
+                    </span>
+            </div>
+
+            <div class="numeros">
+                <div class="mb-2">
+                    <label class="form-label">Kilos</label>
+                    <input formControlName="kilos" type="number" class="form-control">
+                    <span class="form-text text-danger"
+                        *ngIf="campoNoEsValido('kilos')">
+                        Este campo debe ser obligatorio 
+                    </span>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Precio</label>
+                    <input formControlName="precio" type="number" class="form-control">
+                    <span class="form-text text-danger"
+                        *ngIf="campoNoEsValido('precio')">
+                        Este campo debe ser obligatorio 
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="mb-2">
+                    <label class="form-label">Fecha</label>
+                    <input formControlName="fecha" type="date" class="form-control">
+                    <span class="form-text text-danger"
+                        *ngIf="campoNoEsValido('fecha')">
+                        Este campo debe ser obligatorio 
+                    </span>
+                </div>   
+
+                <button class="btn btn-info"
+                        type="submit"
+                        [disabled]="!editarForm.valid">
+                    Editar
+                </button>
+    </form>
+
+</div>

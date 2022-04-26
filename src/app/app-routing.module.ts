@@ -15,7 +15,9 @@ const routes: Routes = [
   },
   {
     path:'tareas',
-    loadChildren:() => import('./tareas/tareas.module').then(m => m.TareasModule)
+    loadChildren:() => import('./tareas/tareas.module').then(m => m.TareasModule),
+    canActivate: [ ValidarTokenGuard ],
+    canLoad:[ ValidarTokenGuard ]
   },
   {
     path:'**',

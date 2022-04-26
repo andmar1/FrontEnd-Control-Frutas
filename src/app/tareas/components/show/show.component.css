@@ -63,11 +63,18 @@ li{
 
 .botones-flex{
     display: flex;
-    gap:5px;
+    gap: 5px;
 }
 
 .bg-table{
     background-color: #fff;
 }
 
+
+.alerta-tabla{
+    font-size: 2rem;
+    border: 2px solid rgb(148, 254, 178);
+    border-radius: 10px;
+    background-color: azure;
+}
 

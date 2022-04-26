@@ -17,60 +17,66 @@
     </div>
 </header>
 
-<h1 class="text-center"> Componente Crear </h1>
+<h1 class="text-center"> Registro </h1>
 
-<div class="container">
-    <form [formGroup]="crear"
-       (ngSubmit)="onSubmit()"
-       autocomplete="off">
+<div class="form-body">
 
-       <div class="mb-3">
-            <label class="form-label">Nombre</label>
-            <input formControlName="nombre" type="text" class="form-control">
-            <span class="form-text text-danger"
-                  *ngIf="campoNoEsValido('nombre')">
-                Este campo debe ser obligatorio 
-            </span>
-       </div>
-       <div class="mb-3">
-            <label class="form-label">Empresa</label>
-            <input formControlName="empresa" type="text" class="form-control">
-            <span class="form-text text-danger"
-                  *ngIf="campoNoEsValido('empresa')">
-                Este campo debe ser obligatorio 
-            </span>
-       </div>
-       <div class="mb-3">
-            <label class="form-label">Kilos</label>
-            <input formControlName="kilos" type="number" class="form-control">
-            <span class="form-text text-danger"
-                  *ngIf="campoNoEsValido('kilos')">
-                Este campo debe ser obligatorio 
-            </span>
-       </div>
-       <div class="mb-3">
-            <label class="form-label">Precio</label>
-            <input formControlName="precio" type="number" class="form-control">
-            <span class="form-text text-danger"
-                  *ngIf="campoNoEsValido('precio')">
-                Este campo debe ser obligatorio 
-            </span>
-       </div>
-       <div class="mb-3">
-            <label class="form-label">Fecha</label>
-            <input formControlName="fecha" type="date" class="form-control">
-            <!-- <span class="form-text text-danger"
-                  *ngIf="campoNoEsValido('fecha')">
-                Este campo debe ser obligatorio 
-            </span> -->
-        </div>   
+    <form class="formulario"
+          [formGroup]="crearForm"
+          (ngSubmit)="onSubmit()"
+          autocomplete="off">
+          
+           <div class="mb-2">
+                <label class="form-label">Nombre</label>
+                <input formControlName="nombre" type="text" class="form-control">
+                    <span class="form-text text-danger"
+                        *ngIf="campoNoEsValido('nombre')">
+                        Este campo debe ser obligatorio 
+                    </span>
+            </div>
+            <div class="mb-2">
+                    <label class="form-label">Empresa</label>
+                    <input formControlName="empresa" type="text" class="form-control">
+                    <span class="form-text text-danger"
+                        *ngIf="campoNoEsValido('empresa')">
+                        Este campo debe ser obligatorio 
+                    </span>
+            </div>
 
-        <button class="btn btn-primary"
-                type="submit"
-                [disabled]="!crear.valid">
-            Crear
-        </button>
+            <div class="numeros">
+                <div class="mb-2">
+                    <label class="form-label">Kilos</label>
+                    <input formControlName="kilos" type="number" class="form-control">
+                    <span class="form-text text-danger"
+                        *ngIf="campoNoEsValido('kilos')">
+                        Este campo debe ser obligatorio 
+                    </span>
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">Precio</label>
+                    <input formControlName="precio" type="number" class="form-control">
+                    <span class="form-text text-danger"
+                        *ngIf="campoNoEsValido('precio')">
+                        Este campo debe ser obligatorio 
+                    </span>
+                </div>
 
+            </div>
+
+            <div class="mb-2">
+                    <label class="form-label">Fecha</label>
+                    <input formControlName="fecha" type="date" class="form-control">
+                    <span class="form-text text-danger"
+                        *ngIf="campoNoEsValido('fecha')">
+                        Este campo debe ser obligatorio 
+                    </span>
+                </div>   
+
+                <button class="btn btn-primary"
+                        type="submit"
+                        [disabled]="!crearForm.valid">
+                    Crear
+                </button>
     </form>
 
 </div>

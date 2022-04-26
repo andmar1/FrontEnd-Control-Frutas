@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from "@angular/router";
 import { TareasService } from '../../services/tareas.service';
 
+import Swal from 'sweetalert2';
+
 
 interface menuItem{
   texto:string;
@@ -15,13 +17,12 @@ interface menuItem{
 })
 export class CreateComponent implements OnInit {
 
-  crear:FormGroup = this._fb.group({
+  crearForm:FormGroup = this._fb.group({
     nombre: ['', [ Validators.required ]],
     empresa: ['', [ Validators.required ]],
     kilos: ['', [ Validators.required ]],
     precio: ['', [ Validators.required ]],
     fecha: ['', [ Validators.required ]],
-  
   })
 
   constructor( private _fb:FormBuilder,
@@ -32,27 +33,30 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit(){
-    this._tareasService.createPost( this.crear.value )
-    this._router.navigate([''])
+    this._tareasService.createPost( this.crearForm.value )
+    
+    Swal.fire({
+      icon:'success',
+      text:'Creación correcta',
+      title:'Creado',
+      timer:2000})
+
+    this._router.navigate(['/tareas/show'])
   }
 
   campoNoEsValido(campo:string){
-    return this.crear.controls?.[campo]?.errors && this.crear.controls?.[campo]?.touched;
+    return this.crearForm.controls?.[campo]?.errors && this.crearForm.controls?.[campo]?.touched;
   }
 
   esparragosMenu:menuItem[] = [
     {
-      texto:'Mostrar',
+      texto:'Mostrar Lista',
       ruta: '/tareas/show'
      },
     {
-      texto:'Crear',
+      texto:'Crear Registro',
       ruta: '/tareas/create'
-    },
-    {
-      texto:'Editar',
-      ruta: '/tareas/edit'
-    },
+    }
   ]
 
 

@@ -22,11 +22,7 @@ export class NavbarComponent {
     {
       texto:'Crear',
       ruta: '/tareas/create'
-    },
-    {
-      texto:'Editar',
-      ruta: '/tareas/edit'
-    },
+    }
   ]
 
   // agregar cerrar sesion

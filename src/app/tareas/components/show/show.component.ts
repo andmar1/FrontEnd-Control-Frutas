@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Registro } from '../../model/Registro';
 import { TareasService } from '../../services/tareas.service';
 
+import Swal from 'sweetalert2';
+
 interface menuItem{
   texto:string;
   ruta:string;
@@ -32,24 +34,25 @@ export class ShowComponent implements OnInit {
       
   }
 
-  deleteRow( post ){
+  deleteRow = ( post ) => {
+    this._tareasService.deletePost( post )
+    Swal.fire({
+      icon:'warning',
+      text:'Borrado correcto',
+      title:'Eliminado',
+      timer:2000 })
 
   }
 
-
   esparragosMenu:menuItem[] = [
     {
-      texto:'Mostrar',
+      texto:'Mostrar Lista',
       ruta: '/tareas/show'
      },
     {
-      texto:'Crear',
+      texto:'Crear Registro',
       ruta: '/tareas/create'
-    },
-    {
-      texto:'Editar',
-      ruta: '/tareas/edit'
-    },
+    }
   ]
 
 

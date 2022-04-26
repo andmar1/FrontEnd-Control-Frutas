@@ -60,10 +60,7 @@ export class AuthService {
         catchError( err => of(err.error.msg) )
       );
   }
-
-
-
-
+  
   validarToken(): Observable<boolean> {
 
     const url = `${ this.baseUrl }/auth/renew`;
@@ -84,7 +81,6 @@ export class AuthService {
           }),
           catchError( err => of(false) )
         );
-
   }
 
   logout() {
