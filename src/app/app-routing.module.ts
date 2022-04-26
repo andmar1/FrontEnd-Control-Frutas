@@ -14,6 +14,10 @@ const routes: Routes = [
     canLoad:[ ValidarTokenGuard ]
   },
   {
+    path:'tareas',
+    loadChildren:() => import('./tareas/tareas.module').then(m => m.TareasModule)
+  },
+  {
     path:'**',
     redirectTo:'auth'
   }
