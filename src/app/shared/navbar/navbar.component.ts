@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../../auth/services/auth.service';
+//colocar datos del usuario
+interface menuITem{
+  texto:string;
+  ruta:string;
+}
 
 @Component({
   selector: 'app-navbar',
@@ -9,16 +12,27 @@ import { AuthService } from '../../auth/services/auth.service';
 })
 export class NavbarComponent {
 
-  get usuario(){   //jalar get de servicio auth, tenemos actualizada la informacion
-    return this._authService.usuario
-  }
+  constructor(  ) { }
 
-  constructor( private _router:Router, 
-               private _authService:AuthService ) { }
+  esparragosMenu:menuITem[] = [
+    {
+      texto:'Mostrar',
+      ruta: '/tareas/show'
+     },
+    {
+      texto:'Crear',
+      ruta: '/tareas/create'
+    },
+    {
+      texto:'Editar',
+      ruta: '/tareas/edit'
+    },
+  ]
 
-  logout(){
-    this._router.navigateByUrl('/auth')
-    this._authService.logout();
-  }
+  // agregar cerrar sesion
+  // logout(){
+  //   this._router.navigateByUrl('/auth')
+  //   this._authService.logout();
+  // }
 
 }

@@ -1,1 +1,20 @@
-<p>create works!</p>
+<header class="header">
+
+    <div class="contenedor">
+        <div class="barra">
+            <a class="logo" routerLink="/tareas/show">
+                <h1 class="logo__nombre ">Aplicación<span class="logo__bold">Esparragos</span></h1>
+            </a>
+            <ul class="listas">
+                <li *ngFor="let item of esparragosMenu"
+                    class="navegacion_enlace"
+                    [routerLink]="item.ruta"
+                    routerLinkActive="active">
+                    {{ item.texto }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+

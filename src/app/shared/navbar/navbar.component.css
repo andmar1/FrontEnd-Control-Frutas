@@ -1,3 +1,73 @@
-*{
-    margin: 15px;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+.contenedor{
+    max-width: 120rem;
+    width: 90%;
+    /* width: min(90% , 120rem); mismo resultado que las dos primeras lineas */
+    margin: 0 auto;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+.contenedor{
+    max-width: 120rem;
+    width: 90%;
+    /* width: min(90% , 120rem); mismo resultado que las dos primeras lineas */
+    margin: 0 auto;
+}
+
+li{
+    text-decoration: none;
+    cursor: pointer;
+    list-style: none;
+}
+
+.listas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(8, 39, 17);
+    border: 1px solid;
+    border-radius: 10px; 
+    margin: auto;
+}
+
+.navegacion_enlace{
+    height: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.navegacion_enlace:hover{
+    font-size: 1.5rem;
+    color: gray;
+}
+
+.header{
+    height: 9rem;
+    background-size: cover;/*Toma todo el espacio disponible*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgb(148, 254, 178);
+}
+.barra{
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.logo{
+    color: rgb(44, 4, 4);
+    text-decoration: none;
+}
+
+.logo__nombre{
+    font-weight: 400;
+}
+
+.logo__bold{
+    font-weight: 700;
+}
+

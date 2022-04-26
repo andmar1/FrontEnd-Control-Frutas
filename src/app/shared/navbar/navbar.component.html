@@ -1,14 +1,18 @@
-<h1>Dashboard</h1>
-<hr>
+<header class="header">
 
-<p>
-    Esta página solo funciona si estas autenticado
-</p>
-
-<h4>User info</h4>
-<pre>{{ usuario | json }}</pre>
-
-<button (click)="logout()">
-    Logout
-</button>
-
+    <div class="contenedor">
+        <div class="barra">
+            <a class="logo" routerLink="/tareas/show">
+                <h1 class="logo__nombre ">Aplicacion<span class="logo__bold">Esparragos</span></h1>
+            </a>
+            <ul class="listas">
+                <li *ngFor="let item of esparragosMenu"
+                    class="navegacion_enlace"
+                    [routerLink]="item.ruta"
+                    routerLinkActive="active">
+                    {{ item.texto }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>

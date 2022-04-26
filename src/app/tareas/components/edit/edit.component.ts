@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+interface menuItem{
+  texto:string;
+  ruta:string;
+}
+
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -11,5 +16,21 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  esparragosMenu:menuItem[] = [
+    {
+      texto:'Mostrar',
+      ruta: '/tareas/show'
+     },
+    {
+      texto:'Crear',
+      ruta: '/tareas/create'
+    },
+    {
+      texto:'Editar',
+      ruta: '/tareas/edit'
+    },
+  ]
+
 
 }
