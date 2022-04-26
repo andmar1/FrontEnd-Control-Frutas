@@ -32,8 +32,7 @@ export class ShowComponent implements OnInit {
       
   }
 
-
-  deleteRow( post:string ){
+  deleteRow( post ){
 
   }
 

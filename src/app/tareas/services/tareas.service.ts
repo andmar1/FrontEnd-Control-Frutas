@@ -51,7 +51,6 @@ export class TareasService {
                 precio:registro.precio,
                 fecha:registro.fecha
               })
-
   }
 
   deletePost( registro:Registro ){

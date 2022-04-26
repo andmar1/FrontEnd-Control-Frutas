@@ -61,3 +61,13 @@ li{
     font-weight: 700;
 }
 
+.botones-flex{
+    display: flex;
+    gap:5px;
+}
+
+.bg-table{
+    background-color: #fff;
+}
+
+
