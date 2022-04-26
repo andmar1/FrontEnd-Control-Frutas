@@ -1,1 +1,28 @@
-<p>register works!</p>
+<form class="form"
+      autocomplete="off"
+      [formGroup]="miFormulario"
+      (ngSubmit)="registro()">
+
+    <div class="form__container">
+      
+        <h2 class="form__title">Registrar</h2>
+        <input type="text" formControlName="name" class="form__input" placeholder="Nombre...">
+        <input type="email" formControlName="email" class="form__input" placeholder="Email...">
+        <input type="password" formControlName="password" class="form__input" placeholder="Password...">
+        
+        <div class="form-group">
+            <button class="btn btn-success btn-lg btn-block anchor" 
+                    [disabled]="miFormulario.invalid" 
+                    type="submit">
+                <i class="fas fa-database"></i>
+                Registro
+            </button>    
+        </div>
+        <h5 class="text-center">
+            !Ya tienes una cuenta!
+        </h5>
+        <a class="liga" routerLink="/auth/login">
+            Ingresa aqui
+        </a>
+    </div>
+</form>

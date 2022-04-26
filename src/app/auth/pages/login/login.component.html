@@ -4,12 +4,19 @@
       (ngSubmit)="login()">
 
     <div class="form__container">
+      
         <h2 class="form__title">Login</h2>
-        <div>
-            <input type="text" formControlName="password" class="form__input" placeholder="Password...">
-        </div>
+        <input type="text" formControlName="password" class="form__input" placeholder="Password...">
         <input type="email" formControlName="email" class="form__input" placeholder="Email...">
-        <input type="submit" value="Enviar" class="form__cta" (click)="send()">
-    
+        
+        <div class="form-group">
+            <button class="btn btn-success btn-lg btn-block anchor" 
+                    [disabled]="miFormulario.invalid" 
+                    type="submit">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                Login
+            </button>    
+        </div>
+
     </div>
 </form>
