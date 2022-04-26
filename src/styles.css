@@ -1,3 +1,7 @@
+/* toastr */
+@import '~ngx-toastr/toastr';   
+
+
 .pad-top{
     padding-top: 3rem;
 }
