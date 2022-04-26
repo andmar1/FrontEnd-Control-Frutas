@@ -42,8 +42,8 @@ li{
 }
 
 .navegacion_enlace:hover{
-    font-size: 1.5rem;
-    color: gray;
+    font-size: 1.3rem;
+    color: rgb(148, 254, 178);;
 }
 
 .header{

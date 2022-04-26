@@ -1,6 +1,6 @@
 export class Registro{
     id!:string;
-    agricultor!:string;
+    nombre!:string;
     empresa!:string;
     kilos!:string;
     precio!:number;

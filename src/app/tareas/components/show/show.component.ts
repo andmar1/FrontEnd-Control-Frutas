@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+// model
+import { Registro } from '../../model/Registro';
+import { TareasService } from '../../services/tareas.service';
 
 interface menuItem{
   texto:string;
@@ -12,10 +15,28 @@ interface menuItem{
 })
 export class ShowComponent implements OnInit {
 
-  constructor() { }
+  Post:Registro[];
+
+  constructor( private _tareasService:TareasService ) { }
 
   ngOnInit(): void {
+    this._tareasService.getPost()
+      .subscribe( (resp)=> {
+        this.Post = resp.map(( e )=>{
+          return {
+            id:e.payload.doc.id,
+            ...(e.payload.doc.data() as Registro)
+          }
+        })
+      })
+      
   }
+
+
+  deleteRow( post:string ){
+
+  }
+
 
   esparragosMenu:menuItem[] = [
     {
@@ -31,6 +52,7 @@ export class ShowComponent implements OnInit {
       ruta: '/tareas/edit'
     },
   ]
+
 
 
 }
