@@ -5,7 +5,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 // model
 import { Registro } from '../model/Registro';
-import { AuthService } from '../../auth/services/auth.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class TareasService {
 
   getPost(){
     return this._angularFirestore
-            .collection('registros')  //coleccion
+            .collection('registros', ref => ref.orderBy('fecha','desc'))  //coleccion ordenada
             .snapshotChanges()
   }
 
@@ -61,5 +61,13 @@ export class TareasService {
               .collection('registros')
               .doc( registro.id )
               .delete()
+  }
+
+
+  kilos():Observable<any>{
+    return this._angularFirestore
+            .collection('registros')
+            .snapshotChanges()
+
   }
 }

@@ -14,9 +14,9 @@ import Swal from 'sweetalert2';
 export class RegisterComponent {
 
   miFormulario:FormGroup = this._fb.group({
-    name:     ['Narciso',[ Validators.required ]],
-    email:    ['chicho@gmail.com',[ Validators.required, Validators.email ]],
-    password: ['000000', [ Validators.required ]]
+    name:     ['Antonio',[ Validators.required ]],
+    email:    ['andrademares@gmail.com',[ Validators.required, Validators.email ]],
+    password: ['123456', [ Validators.required ]]
   })
 
   constructor( private _fb:FormBuilder, 

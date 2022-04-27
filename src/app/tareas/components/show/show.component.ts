@@ -39,8 +39,9 @@ export class ShowComponent implements OnInit {
             ...(e.payload.doc.data() as Registro)
           }
         })
-      })
-      
+      })  
+        
+
   }
 
   deleteRow = ( post ) => {
@@ -62,9 +63,7 @@ export class ShowComponent implements OnInit {
       timer:2000})
     
     this._authService.logout()
-
   }
-  
 
   esparragosMenu:menuItem[] = [
     {
