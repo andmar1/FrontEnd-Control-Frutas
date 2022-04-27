@@ -3,7 +3,7 @@
     <div class="contenedor">
         <div class="barra">
             <a class="logo" routerLink="/tareas/show">
-                <h1 class="logo__nombre ">Aplicacion<span class="logo__bold">Esparragos</span></h1>
+                <h1 class="logo__nombre ">Aplicación<span class="logo__bold">Esparragos</span></h1>
             </a>
             <ul class="listas">
                 <li *ngFor="let item of esparragosMenu"
@@ -12,17 +12,18 @@
                     routerLinkActive="active">
                     {{ item.texto }}
                 </li>
-                
                 <div class="usuario">
                     <div class="user">
                         {{ user.name }}
                     </div>
-                    <button class="btn-user" (click)="logout()">
+                    <button class="btn-user"
+                            (click)="logout()">
                         Cerrar sesión
                     </button>
                 </div>
-
+    
             </ul>
         </div>
     </div>
+
 </header>

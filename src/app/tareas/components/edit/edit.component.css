@@ -132,3 +132,17 @@ li{
     gap: 5px;
 }
 
+.usuario{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.btn-user{
+    padding: .3rem;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgb(140, 238, 255);
+}
+.user{
+    color: white;
+}

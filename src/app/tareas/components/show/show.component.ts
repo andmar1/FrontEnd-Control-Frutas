@@ -4,6 +4,9 @@ import { Registro } from '../../model/Registro';
 import { TareasService } from '../../services/tareas.service';
 
 import Swal from 'sweetalert2';
+import { AuthService } from '../../../auth/services/auth.service';
+import { Usuario } from '../../../auth/interfaces/interface';
+import { Router } from '@angular/router';
 
 interface menuItem{
   texto:string;
@@ -19,7 +22,13 @@ export class ShowComponent implements OnInit {
 
   Post:Registro[];
 
-  constructor( private _tareasService:TareasService ) { }
+  constructor( private _tareasService:TareasService,
+               private _authService:AuthService,
+               private _router:Router) { }
+
+  get user():Usuario{
+    return {...this._authService.usuario}
+  }
 
   ngOnInit(): void {
     this._tareasService.getPost()
@@ -41,8 +50,21 @@ export class ShowComponent implements OnInit {
       text:'Borrado correcto',
       title:'Eliminado',
       timer:2000 })
+  }
+
+  // cerrar sesion
+  logout(){
+    this._router.navigateByUrl('')
+    Swal.fire({
+      icon:'info',
+      text:'Sesion cerrada',
+      title:'Correcto',
+      timer:2000})
+    
+    this._authService.logout()
 
   }
+  
 
   esparragosMenu:menuItem[] = [
     {
@@ -52,6 +74,10 @@ export class ShowComponent implements OnInit {
     {
       texto:'Crear Registro',
       ruta: '/tareas/create'
+    },
+    {
+      texto:'Cryptomonedas',
+      ruta:'/crypto/coin'
     }
   ]
 

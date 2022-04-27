@@ -12,6 +12,16 @@
                     routerLinkActive="active">
                     {{ item.texto }}
                 </li>
+                <div class="usuario">
+                    <div class="user">
+                        {{ user.name }}
+                    </div>
+                    <button class="btn-user"
+                            (click)="logout()">
+                        Cerrar sesión
+                    </button>
+                </div>
+    
             </ul>
         </div>
     </div>
@@ -19,8 +29,6 @@
 </header>
 
 <div class="container mt-3">
-
-    <h2 class="text-center">Componente Show</h2>
     
     <div class="d-grip gap-2 mt-4 mb-3">
         <a routerLink="/tareas/create"
@@ -37,6 +45,7 @@
                 <th>Empresa</th>
                 <th>Kilos</th>
                 <th>Precio</th>
+                <th>Fecha</th>
                 <th class="pr-2">Acciones</th>
             </tr>
         </thead>
@@ -45,8 +54,9 @@
             <tr *ngFor="let post of Post">
                 <th>{{ post.nombre }}</th>
                 <th>{{ post.empresa }}</th>
-                <th>{{ post.kilos}}</th>
-                <th>{{ post.precio }}</th>
+                <th>{{ post.kilos }}</th>
+                <th>{{ post.precio | currency }}</th>
+                <th>{{ post.fecha | date}}</th>
                 <td class="botones-flex">
                     <button class="btn btn-outline-secondary"
                             routerLink="/tareas/edit/{{post.id}}">

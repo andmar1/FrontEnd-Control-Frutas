@@ -12,6 +12,17 @@
                     routerLinkActive="active">
                     {{ item.texto }}
                 </li>
+
+                <div class="usuario">
+                    <div class="user">
+                        {{ user.name }}
+                    </div>
+                    <button class="btn-user"
+                            (click)="logout()">
+                        Cerrar sesión
+                    </button>
+                </div>
+
             </ul>
         </div>
     </div>
@@ -80,3 +91,4 @@
     </form>
 
 </div>
+

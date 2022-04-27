@@ -5,6 +5,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 // model
 import { Registro } from '../model/Registro';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,8 @@ import { Registro } from '../model/Registro';
 export class TareasService {
 
   constructor( private _angularFirestore:AngularFirestore ) { }
+
+  
 
   getPost(){
     return this._angularFirestore

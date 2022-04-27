@@ -20,6 +20,12 @@ const routes: Routes = [
     canLoad:[ ValidarTokenGuard ]
   },
   {
+    path:'crypto',
+    loadChildren:() => import('./crypto/crypto.module').then(m => m.CryptoModule),
+    canActivate:[ ValidarTokenGuard ],
+    canLoad:[ ValidarTokenGuard ]
+  },
+  {
     path:'**',
     redirectTo:'auth'
   }
