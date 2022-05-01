@@ -22,6 +22,12 @@ export class ShowComponent implements OnInit {
 
   Post:Registro[];
 
+  arrayKilos:[];
+
+  public operador:string;
+  public precio:number = 0;
+  
+
   constructor( private _tareasService:TareasService,
                private _authService:AuthService,
                private _router:Router) { }

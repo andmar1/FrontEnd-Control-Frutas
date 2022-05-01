@@ -62,12 +62,5 @@ export class TareasService {
               .doc( registro.id )
               .delete()
   }
-
-
-  kilos():Observable<any>{
-    return this._angularFirestore
-            .collection('registros')
-            .snapshotChanges()
-
-  }
+  
 }

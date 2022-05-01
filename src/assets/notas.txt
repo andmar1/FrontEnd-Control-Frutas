@@ -11,3 +11,25 @@ firebaseConfig : {
     messagingSenderId: "718594285664",
     appId: "1:718594285664:web:58b4632a38b1c5ec4ce305"
 }
+
+
+
+queries en no firebase
+
+
+  // Queries 
+  // SELECT * FROM PRODUCTOS WHERE PRECIO == 100;
+
+  getProductosByPrecio( operador:'<'|'>'|'==', precio:number ){
+    return this._angularFirestore
+            .collection('registros', ref => ref.where('precio', operador, precio))
+            
+  }
+  
+  // SELECT * FROM PRODUCTOS WHERE NOMBRE == "Nombre del producto";
+  getProductosByNombre (nombre :string ){
+    return this._angularFirestore
+            .collection('registros', ref => ref.where('nombre','==', nombre))
+
+
+  }

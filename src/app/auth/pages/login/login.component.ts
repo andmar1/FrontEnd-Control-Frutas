@@ -17,7 +17,7 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent {
 
   miFormulario:FormGroup = this._fb.group({
-    email:['AntonioAndrade@gmail.com', [ Validators.required, Validators.email ]],
+    email:['andmar@gmail.com', [ Validators.required, Validators.email ]],
     password: ['123456', [Validators.required, Validators.minLength(6) ]]
   })
 
@@ -48,6 +48,10 @@ export class LoginComponent {
             })
           }
         });
+  }
+
+  campoNoEsValido( campo:string){
+    return this.miFormulario.controls?.[campo]?.errors && this.miFormulario.controls?.[campo]?.touched;
   }
 
 }
